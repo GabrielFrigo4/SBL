@@ -18,8 +18,8 @@ O projeto é guiado pelas filosofias dos 4 grandes BSDs:
 
 - ⚡ **FreeBSD**: Foco em **eficiência** e alto desempenho.
 - 🔒 **OpenBSD**: Foco em **simplicidade, auditabilidade e segurança**.
-- 🌐 **NetBSD**: Foco em **portabilidade extrema**.
-- 🚀 **DragonFlyBSD**: Foco em **concorrência/paralelismo avançado** e arquiteturas sem medo de inovar.
+- 🌐 **NetBSD**: Foco em **portabilidade universal**.
+- 🚀 **DragonFlyBSD**: Foco em **paralelismo e concorrência sem travas**.
 
 Para entender todos os detalhes da nossa visão, leia o documento [PHILOSOPHY.md](PHILOSOPHY.md).
 

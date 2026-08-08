@@ -25,19 +25,19 @@ Um dos pilares fundamentais do SBL é **nunca ficar preso ao passado**. O projet
 
 ## 🛡️ Os 4 Pilares das Filosofias BSD
 
-O SBL herda e combina as melhores filosofias dos quatro grandes sistemas operacionais BSD:
+O SBL herda e combina os 4 grandes pilares dos sistemas operacionais BSD em frases de efeito equilibradas:
 
 1. ⚡ **FreeBSD — Ser Eficiente**:
-   Foco em alto desempenho, uso racional de memória e throughput máximo em cada função disponibilizada.
+   Foco em alto desempenho, throughput máximo e uso inteligente de memória.
 
-2. 🔒 **OpenBSD — Ser Simples, Auditável e Seguro**:
-   Código claro, sem trechos obscuros, escrito com mentalidade *secure-by-default*, fácil de auditar e livre de vulnerabilidades comuns.
+2. 🔒 **OpenBSD — Ser Seguro e Auditável**:
+   Código simples, transparente, sem trechos obscuros e seguro por padrão.
 
-3. 🌐 **NetBSD — Ser Portável**:
-   Estar pronto para rodar em qualquer lugar. O código deve ser limpo e aderente aos padrões para facilitar a portabilidade entre arquiteturas e sistemas operacionais.
+3. 🌐 **NetBSD — Ser Universalmente Portável**:
+   Código limpo e padronizado pronto para rodar em qualquer plataforma ou arquitetura.
 
-4. 🚀 **DragonFlyBSD — Sem travas para o paralelo e sem medo de arquitetar o futuro**:
-   Arquitetura preparada para concorrência moderna, evitando travamentos desnecessários (lockless/parallel-first) e sem medo de inovar ou buscar as melhores estruturas possíveis.
+4. 🚀 **DragonFlyBSD — Ser Paralelo e Inovador**:
+   Concorrência moderna sem travas (lockless) e liberdade para projetar o futuro.
 
 ---
 
