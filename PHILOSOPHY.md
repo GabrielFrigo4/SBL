@@ -7,13 +7,13 @@ O **Standard BSD Libraries (SBL)** nasceu para ser uma suíte completa, moderna 
 ## 💡 O Nome, Referências e Integração com a SDL
 
 O acrônimo **SBL** faz referência proposital a dois ícones do desenvolvimento de software:
-- **STL** (*Standard Template Library* do C++): A ideia de ser uma biblioteca padrão rica, utilitária e abrangente.
-- **SDL** (*Simple DirectMedia Layer*): A sonoridade e a simplicidade de integração.
+- **STL** (**Standard Template Library** do C++): A ideia de ser uma biblioteca padrão rica, utilitária e abrangente.
+- **SDL** (**Simple DirectMedia Layer**): A sonoridade e a simplicidade de integração.
 
 > 📌 **Nota sobre Multimídia, Gráficos e Periféricos**:
-> O SBL **não** reinventará a roda em tarefas de baixo nível relativas a janelas, áudio, GPU/Vulkan/OpenGL, teclado, mouse ou webcams. Toda essa infraestrutura de mídia e periféricos é deliberadamente delegada à **SDL**, com a qual o SBL se integra perfeitamente.
+> O SBL **não** reinventará a roda em tarefas de baixo nível relativas a janelas, áudio, GPU/Vulkan/OpenGL, teclado, mouse ou webcams. Toda essa infraestrutura de mídia e periféricos é deliberadamente delegada à **SDL** (**Simple DirectMedia Layer**), com a qual o SBL se integra perfeitamente.
 
-O ecossistema mantém o padrão de nomenclatura curto **S<X>L** (como `-lsbl`, `-lsel`, `-lstl`, `-lscl`, `-lsml`).
+O ecossistema mantém o padrão de nomenclatura curto **S<X>L** (como `-lsbl`, `-lsel`, `-lsgl`, `-lstl`, `-lscl`, `-lsml`).
 
 ---
 

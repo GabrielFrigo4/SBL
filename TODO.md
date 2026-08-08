@@ -6,8 +6,9 @@
  - [ ] SDBL "Simple DataBase Library" (-lsdbl)
  - [ ] SEL "Simple Encryption Library" (-lsel)
 
-### Mathematical & Optimization
+### Mathematical, Graphs & Optimization
  - [ ] SML "Simple Mathematical Library" (-lsml)
+ - [ ] SGL "Simple Graph Library" (-lsgl)
  - [ ] SORL "Simple Operations Research Library" (-lsorl)
 
 ### Network & Web

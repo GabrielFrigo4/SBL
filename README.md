@@ -6,9 +6,9 @@
 
 O **Standard BSD Libraries (SBL)** é uma suíte modular e moderna de bibliotecas para a linguagem C (padrão **C23**), projetada no padrão de nomenclatura enxuto **S<X>L** para ser a "biblioteca padrão" definitiva que elimina as dores de cabeça do desenvolvimento em C.
 
-O nome e conceito são inspirações diretas da STL (do C++) e da sonoridade da SDL. 
+O nome e conceito são inspirações diretas da **STL** (**Standard Template Library** do C++) e da sonoridade da **SDL** (**Simple DirectMedia Layer**). 
 
-> 🎮 **Integração com SDL**: Gráficos (GPU/Vulkan/OpenGL), janelas, áudio, entrada de teclado/mouse e periféricos são delegados à **SDL**, com a qual a suíte SBL se integra nativamente sem reinventar a roda.
+> 🎮 **Integração com SDL**: Gráficos (GPU/Vulkan/OpenGL), janelas, áudio, entrada de teclado/mouse e periféricos são delegados à **SDL** (**Simple DirectMedia Layer**), com a qual a suíte SBL se integra nativamente sem reinventar a roda.
 
 ---
 
@@ -37,9 +37,10 @@ A suíte engloba a biblioteca principal **Standard BSD Library** (`-lsbl`) e um 
 * **SDBL** (`-lsdbl`): Simple DataBase Library.
 * **SEL** (`-lsel`): Simple Encryption Library *(Hashes, Ciphers, CSPRNG, TLS)*.
 
-### Mathematical & Optimization
-* **SML** (`-lsml`): Simple Mathematical Library.
-* **SORL** (`-lsorl`): Simple Operations Research Library.
+### Mathematical, Graphs & Optimization
+* **SML** (`-lsml`): Simple Mathematical Library *(Álgebra Linear, Matrizes, Geometria)*.
+* **SGL** (`-lsgl`): Simple Graph Library *(Grafos, BFS/DFS, Fluxo em Redes, Caminho Mínimo)*.
+* **SORL** (`-lsorl`): Simple Operations Research Library *(Otimização Linear, Simplex)*.
 
 ### Network & Web
 * **SNL** (`-lsnl`): Simple Network Library.
