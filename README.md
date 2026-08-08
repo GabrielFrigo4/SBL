@@ -4,9 +4,11 @@
 [![C Standard](https://img.shields.io/badge/C-C23-blue.svg)](PHILOSOPHY.md)
 [![Build System](https://img.shields.io/badge/Build-bmake-orange.svg)](PHILOSOPHY.md)
 
-O **Standard BSD Libraries (SBL)** é uma suíte modular e moderna de bibliotecas para a linguagem C (padrão **C23**), projetada para ser a "biblioteca padrão" definitiva que elimina as dores de cabeça do desenvolvimento em C.
+O **Standard BSD Libraries (SBL)** é uma suíte modular e moderna de bibliotecas para a linguagem C (padrão **C23**), projetada no padrão de nomenclatura enxuto **S<X>L** para ser a "biblioteca padrão" definitiva que elimina as dores de cabeça do desenvolvimento em C.
 
-O nome e conceito são inspirações diretas da STL (do C++) e da sonoridade da SDL, combinando simplicidade, alta modularidade e performance.
+O nome e conceito são inspirações diretas da STL (do C++) e da sonoridade da SDL. 
+
+> 🎮 **Integração com SDL**: Gráficos (GPU/Vulkan/OpenGL), janelas, áudio, entrada de teclado/mouse e periféricos são delegados à **SDL**, com a qual a suíte SBL se integra nativamente sem reinventar a roda.
 
 ---
 
@@ -23,9 +25,9 @@ Para entender todos os detalhes da nossa visão, leia o documento [PHILOSOPHY.md
 
 ---
 
-## 🧰 Suíte de Módulos (Libraries)
+## 🧰 Suíte de Módulos (Libraries S<X>L)
 
-A suíte engloba a biblioteca principal **Standard BSD Library** (`-lsbl`) e um conjunto de bibliotecas focadas em tarefas específicas:
+A suíte engloba a biblioteca principal **Standard BSD Library** (`-lsbl`) e um conjunto de módulos focados:
 
 ### Standard BSD
 * **SBL** (`-lsbl`): Standard BSD Library (biblioteca principal do ecossistema).
@@ -33,6 +35,7 @@ A suíte engloba a biblioteca principal **Standard BSD Library** (`-lsbl`) e um 
 ### Security & Data
 * **SACL** (`-lsacl`): Simple Authentication Credential Library.
 * **SDBL** (`-lsdbl`): Simple DataBase Library.
+* **SEL** (`-lsel`): Simple Encryption Library *(Hashes, Ciphers, CSPRNG, TLS)*.
 
 ### Mathematical & Optimization
 * **SML** (`-lsml`): Simple Mathematical Library.
@@ -46,9 +49,10 @@ A suíte engloba a biblioteca principal **Standard BSD Library** (`-lsbl`) e um 
 * **SCL** (`-lscl`): Simple Concurrency Library.
 * **SFL** (`-lsfl`): Simple Filesystem Library.
 
-### Utilities & Testing
+### Utilities, CLI & Testing
 * **SLL** (`-lsll`): Simple Logging Library.
 * **SPL** (`-lspl`): Simple Parsing Library.
+* **STL** (`-lstl`): Simple Terminal Library *(Cores ANSI, TUI, CLI prompts)*.
 * **SUTL** (`-lsutl`): Simple Unit Testing Library.
 
 ---
