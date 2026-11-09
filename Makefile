@@ -93,8 +93,9 @@ test:
 	fi
 
 clean:
-	echo "🧹 Limpando artefatos de compilação..."
-	rm -rf $(BUILD_DIR)
+	echo "🧹 Limpando artefatos de compilação, caches e .venv..."
+	rm -rf $(BUILD_DIR) .venv
+	find . -type d -name "__pycache__" -exec rm -rf {} + 2> "/dev/null" || true
 	echo "✅ Workspace limpo!"
 
 ### ================================
