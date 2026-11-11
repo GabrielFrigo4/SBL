@@ -88,23 +88,20 @@ Consulte [PHILOSOPHY.md](PHILOSOPHY.md) para o manifesto arquitetural completo.
 O SBL foi concebido para ser consumido diretamente via `bmake` ou `make` POSIX:
 
 ```sh
-# Compilar bibliotecas (estática e dinâmica)
 make build
-
-# Executar testes unitários
 make test
-
-# Instalar headers em /usr/local/include/sbl e biblioteca em /usr/local/lib
 make install
 ```
 
-Para linkar em seus projetos:
+Para linkar estaticamente sem dependências em runtime:
 
 ```sh
-# Linkagem estática (zero dependências em runtime)
 cc -std=c23 main.c -lsbl -o app
+```
 
-# Linkagem dinâmica
+Para linkar dinamicamente:
+
+```sh
 cc -std=c23 main.c -Wl,-Bdynamic -lsbl -o app
 ```
 

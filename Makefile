@@ -107,7 +107,7 @@ format: clang-format prettier
 clang-format:
 	echo "🎨 Formatando arquivos C/Header com clang-format..."
 	if command -v clang-format > "/dev/null" 2>&1; then \
-		find . -type f \( -name "*.c" -o -name "*.h" \) -not -path "*/.*" -exec clang-format -i {} + 2>/dev/null || true; \
+		find . -type f \( -name "*.c" -o -name "*.h" \) -not -path "*/.*" -exec clang-format -i {} + 2> "/dev/null" || true; \
 	fi
 
 prettier:
