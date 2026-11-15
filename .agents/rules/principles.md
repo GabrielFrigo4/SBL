@@ -1,32 +1,40 @@
-# Regras Canônicas de Domínio & Regras Locais: Standard BSD Libraries (SBL)
-
-> Regras de governança estrita e restrições de arquitetura para agentes de IA operando no repositório **SBL** (`Personal/Systems/BSD Lib`).
-
+---
+description: Regra canônica com os 22 princípios soberanos de engenharia e diretrizes operacionais.
+globs: "**/*"
+always_on: true
 ---
 
-## 1. O Padrão C23 & Qualidade do Código
+# 📜 Princípios Soberanos de Engenharia & Diretrizes Canônicas
 
-1. **Compilação Estrita C23:** Todo código C deve utilizar exclusivamente primitivas contemporâneas do **C23** (`-std=c23`). É mandatório compilar limpo sem warnings com `-Wall -Wextra -Wpedantic -Wconversion -Werror`.
-2. **Imunidade a Overflow Aritmético:** Toda operação de alocação dinâmica, cálculo de tamanho de buffer ou indexação deve utilizar primitivas de verificação de estouro de `<stdckdint.h>` (`ckd_add`, `ckd_mul`).
-3. **Atributo `[[nodiscard]]` Obrigatório:** Toda função que aloca memória, retorna código de erro, status de operação ou ponteiro novo deve ser decorada com `[[nodiscard]]`.
-4. **Tipagem Exata & Alinhamento:** Uso mandatório de `nullptr`, tipos de largura fixa de `<stdint.h>` (`uint64_t`, `size_t`) e ponteiros tipados opacos.
+Todo trabalho de engenharia e desenvolvimento neste repositório obedece rigorosamente aos 22 Princípios de Engenharia (17 Princípios UNIX de Eric S. Raymond + 5 Regras de Soberania & Antifragilidade).
 
----
+## 🏛️ Os 22 Princípios de Design
 
-## 2. A Linha Vermelha do Sistema Operacional
+1. **Modularidade:** Partes simples conectadas por interfaces limpas.
+2. **Clareza:** Clareza é melhor que esperteza; legibilidade sobre truques crípticos.
+3. **Composição:** Projete programas para serem conectados a outros programas.
+4. **Separação:** Separe política do mecanismo; separe o motor da interface.
+5. **Simplicidade:** Projete para a simplicidade; adicione complexidade apenas onde estritamente necessário.
+6. **Parcimônia:** Escreva código grande apenas quando demonstrado que nada menor resolverá.
+7. **Transparência:** Projete para visibilidade facilitando inspeção e auditoria.
+8. **Robustez:** Robustez advém da simplicidade e da validação defensiva de invariantes.
+9. **Representação:** Dobre conhecimento em dados/estruturas antes de espalhar lógica condicional.
+10. **Menor Espanto:** Siga sempre as convenções canônicas menos surpreendentes da plataforma.
+11. **Silêncio:** Programas devem executar quietos no sucesso, reportando apenas falhas reais.
+12. **Reparo:** Falhe ruidosamente e o mais rápido possível (fail-fast).
+13. **Economia:** Economize o tempo humano de engenharia em preferência ao tempo de máquina.
+14. **Geração:** Evite código mecânico e repetitivo; automatize scaffolds e templates.
+15. **Otimização:** Meça antes de otimizar; nunca sacrifique clareza por micro-otimizações precoces.
+16. **Diversidade:** Desconfie de visões absolutistas; forneça interoperabilidade e portabilidade.
+17. **Extensibilidade:** Projete para o futuro reconhecendo que os requisitos irão evoluir.
+18. **Soberania do Usuário:** Infraestrutura e dados pertencem ao criador; repatrie dependências de nuvem e serviços proprietários.
+19. **Autonomia Reentrante:** Toda operação deve ser idempotente, auto-recuperável e executável repetidamente sem efeitos colaterais.
+20. **Hermetismo de Produção:** Deleção de `.agents/` e governança de IA não interfere em nenhum artefato de build ou execução de produção (`rm -rf .agents`).
+21. **Desacoplamento Dev-Hub:** O código canônico reside na bancada de desenvolvimento; instalações em produção são atualizadas via pull limpo.
+22. **Antifragilidade & Resiliência Ativa:** O sistema se fortalece sob estresse e perturbação com auto-cura em tempo de voo e fallback dinâmico em cascata.
 
-1. **Proibição de Reimplantação de I/O e Rede:** O SBL **NÃO** deve criar wrappers ou reimplementar sockets, protocolos de rede, I/O de arquivos ou chamadas de sistema POSIX. O kernel e a libc POSIX cuidam disso.
-2. **Proibição de Wrappers sobre Threads:** O subsistema `pthread` do POSIX é a autoridade nativa. O SBL provê apenas estruturas de dados e algoritmos reentrantes e thread-safe.
-3. **Escopo Canônico dos 4 Módulos:** O código deve residir estritamente nos 4 domínios:
-    - `<sbl/algo.h>`: Algoritmos e estruturas de dados dinâmicas.
-    - `<sbl/prng.h>`: PRNGs modernos (PCG64, Xoshiro256++, SplitMix64).
-    - `<sbl/crypto.h>`: Hashing criptográfico leve (BLAKE3, ChaCha20, SHA-256).
-    - `<sbl/zip.h>`: Codecs de compressão streaming no formato DEFLATE/Zip.
+## 🎯 Invariantes Operacionais
 
----
-
-## 3. Compilação, Linkagem & Invariantes
-
-1. **Linkagem Dual:** Todo módulo deve ser compilável como biblioteca estática (`libsbl.a`) e dinâmica (`libsbl.so`).
-2. **Compatibilidade `bmake`:** Makefiles devem ser estritamente compatíveis com o `bmake` do FreeBSD/NetBSD e com o `make` POSIX.
-3. **Invariante Hermetismo de Produção:** Nenhuma linha de código em `src/` ou `include/` pode depender de `.agents/` ou skills. A deleção `rm -rf .agents` deve manter o repositório 100% funcional.
+- **Makefile Silencioso:** Todo repositório possui `Makefile` POSIX `.SILENT:` com help colorido interativo (`make help`).
+- **Githooks Autônomos:** Pre-commit e commit-msg em POSIX `sh` sem dependências globais externas.
+- **Permissões Canônicas:** `chmod 0755` para `.githooks/*` e scripts/entrypoints executáveis iniciados com shebang `#!`; `chmod 0644` para bibliotecas `sourced`, arquivos de configuração, código-fonte e documentação.
